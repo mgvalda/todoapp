@@ -1,14 +1,15 @@
+
 import React, { useState } from "react";
 import ToDoItem from "./ToDoItem";
 import ToDoList from "./ToDoList";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import "./App.css";
 
 function App() {
   const [listItems, setListItems] = useState([]);
 
   function addItem(toDo) {
-    setListItems(prevItems => {
+    setListItems((prevItems) => {
       return [...prevItems, toDo];
     });
   }
@@ -22,11 +23,7 @@ function App() {
       <div>
         <ul>
           {listItems.map((todoItem) => (
-            <ToDoItem
-              key={uuidv4()}
-              id={uuidv4}
-              text={todoItem}
-            />
+            <ToDoItem key={uuidv4()} id={uuidv4} text={todoItem} />
           ))}
         </ul>
       </div>
